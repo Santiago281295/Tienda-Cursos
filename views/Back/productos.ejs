@@ -1,0 +1,49 @@
+<%- include layouts/headerBack.ejs %>
+<div class="col-lg-6">
+    <div class="card">
+      <div class="card-header d-flex align-items-center">
+        <h4>Manual</h4>
+      </div>
+      <div class="card-body">
+        <p>Ingresa los datos del manual a subir</p>
+        <form>
+
+          <div class="form-group">
+            <label>Titulo</label>
+            <input placeholder="Ingrese el titulo del manual" class="form-control">
+          </div>
+
+          <div class="form-group">       
+            <label>Descripción</label>
+            <input placeholder="Ingrese descripción" class="form-control">
+          </div>
+
+          <div class="form-group">       
+                <label>Cantidad</label>
+                <input placeholder="Ingrese cantidad" class="form-control">
+          </div>
+
+          <div class="form-group">       
+                <label>Imagen</label>
+                <input class="btn btn-info" type="file" name="pic" accept="image/*">
+          </div>
+
+          <div class="form-group">       
+                <label>Autor</label>
+                <input placeholder="Ingrese autor" class="form-control">
+          </div>
+
+          <div class="form-group">       
+                <label>Tecnología</label>
+                <input placeholder="Ingrese tecnología" class="form-control">
+          </div>    
+
+          <div class="form-group">       
+            <input type="submit" value="Guardar" class="btn btn-primary">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+ 
+<%- include layouts/footerBack.ejs %>
