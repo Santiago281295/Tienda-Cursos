@@ -5,6 +5,11 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
+
+router.get('/login', function(req, res, next) {
+  res.render('login', { title: 'Express' });
+});
+
  /*Rutas Del Backend*/
 
 router.get('/Back', function(req, res, next) {
