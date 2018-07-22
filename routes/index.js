@@ -10,6 +10,10 @@ router.get('/login', function(req, res, next) {
   res.render('login', { title: 'Express' });
 });
 
+router.get('/carrito', function(req, res, next) {
+  res.render('carrito', { title: 'Express' });
+});
+
 router.get('/usuarios', function(req, res, next) {
   res.render('usuarios', { title: 'Express' });
 });
