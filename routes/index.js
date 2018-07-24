@@ -21,6 +21,8 @@ router.get('/usuarios', function(req, res, next) {
 
  /*Rutas Del Backend*/
 
+/*Prueba loca desde movil*/
+
 router.get('/Back', function(req, res, next) {
 
 	db.query('SELECT * FROM usuarios', function(err, results) {
