@@ -11,6 +11,40 @@ router.get('/login', function(req, res, next) {
   res.render('login', { title: 'Express' });
 });
 
+router.post('/login', function (req, res, next) {
+  var correo = req.body.txtCorreo;
+  var contrasena = req.body.txtContrasena;
+  var administrador = '';
+
+  db.query('SELECT * FROM Usuarios WHERE Correo=? AND Contrasena=? LIMIT 1', [correo, contrasena], function(err, results) {
+    if (err){
+      console.log(err);
+
+      throw err;
+    }
+
+    if(results.length == 1) {
+      if(results[0].Correo == 'aurelio16.mex@gmail.com') {
+        administrador = 't';
+
+      } else {
+        administrador = 'f';
+      }
+    }
+  });
+  
+  if(administrador == 't') {
+    res.redirect('/Back');
+  } else {
+    if(administrador == 'f') {
+      res.redirect('/');
+    } else {
+      res.redirect('/login');
+    }
+  } 
+    
+});
+
 router.get('/carrito', function(req, res, next) {
   res.render('carrito', { title: 'Express' });
 });
@@ -21,28 +55,7 @@ router.get('/usuarios', function(req, res, next) {
 
  /*Rutas Del Backend*/
 
-/*Prueba loca desde movil*/
-
 router.get('/Back', function(req, res, next) {
-
-	db.query('SELECT * FROM usuarios', function(err, results) {
-		if (err){
-			console.log(err);
-
-			throw err;
-		}
-
-        for (var i = 0; i <= results.length - 1; i++) {
-        	console.log(results[0].IDUsuario);
-        	console.log(results[0].Nombre);
-        	console.log(results[0].Apellido);
-        	console.log(results[0].Correo);
-        	console.log(results[0].Contrasena);
-        }
-    })
-
-    db.end();
-
 	res.render('Back/index', { title: 'Express' });
 });
 

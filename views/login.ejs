@@ -1,7 +1,34 @@
 <%- include layouts/header.ejs %>
 
 <body>
-</br>
+  <div class="row">
+
+    <div class="col-md-3"></div>
+
+    <div class="col-md-6">
+        <form action="/login" method="POST">
+          <!-- Login Details -->
+          <div class="billing-details">
+            <div class="section-title">
+              <h3 class="title">Iniciar Sesi&oacute;n.</h3>
+            </div>
+            <div class="form-group">
+              <input class="input" type="text" name="txtCorreo" placeholder="Correo Electrónio">
+            </div>
+            <div class="form-group">
+              <input class="input" type="text" name="txtContrasena" placeholder="Contraseña">
+            </div>
+            <div class="form-group">
+              <input class="primary-btn cta-btn" type="submit" value="Iniciar Sesión">
+            </div>
+          </div>
+          <!-- /Login Details -->
+        </form>
+    </div>
+
+    <div class="col-md-3"></div>
+  </div>
+<!-- </br>
     <div class="page login-page">
       <div class="container">
         <div class="form-outer text-center d-flex align-items-center">
@@ -21,7 +48,7 @@
               </div>
 
               <div class="form-group text-center"><a id="login" href="/Back" class="btn btn-primary">Login</a>
-                <!-- This should be submit button but I replaced it with <a> for demo purposes-->
+                <!-- This should be submit button but I replaced it with <a> for demo purposes
               </div>
 
             </form><a href="#" class="forgot-pass">Olvidaste la contraseña</a><small>No tienes cuenta </small><a href="register.html" class="signup">Signup</a>
@@ -32,7 +59,7 @@
     </div>
 </center>
 </br>
-    <!-- JavaScript files-->
+    <!-- JavaScript files
     <script src="Back/vendor/jquery/jquery.min.js"></script>
     <script src="Back/vendor/popper.js/umd/popper.min.js"> </script>
     <script src="Back/vendor/bootstrap/js/bootstrap.min.js"></script>
@@ -41,8 +68,8 @@
     <script src="Back/vendor/chart.js/Chart.min.js"></script>
     <script src="Back/vendor/jquery-validation/jquery.validate.min.js"></script>
     <script src="Back/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
-    <!-- Main File-->
-    <script src="Back/js/front.js"></script>
+    <!-- Main File
+    <script src="Back/js/front.js"></script> -->
   </body>
 
 <%- include layouts/footer.ejs %>
