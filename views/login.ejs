@@ -19,10 +19,10 @@
             </div>
             <% } %>
             <div class="form-group">
-              <input class="input" type="text" name="txtCorreo" placeholder="Correo Electrónio" value="<%= global.usuario %>" autofocus>
+              <input class="input" type="email" name="txtCorreo" placeholder="Correo Electrónio" value="<%= global.usuario %>" autofocus required>
             </div>
             <div class="form-group">
-              <input class="input" type="password" name="txtContrasena" placeholder="Contraseña">
+              <input class="input" type="password" name="txtContrasena" placeholder="Contraseña" required>
             </div>
             <div class="form-group">
               <input class="primary-btn cta-btn" type="submit" value="Iniciar Sesión">

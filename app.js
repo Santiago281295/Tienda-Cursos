@@ -9,6 +9,11 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
+/* Para la subida de archivos al servidor */
+/* https://www.npmjs.com/package/express-fileupload */
+const fileUpload = require('express-fileupload');
+app.use(fileUpload());
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');

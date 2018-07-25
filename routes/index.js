@@ -47,6 +47,48 @@ router.post('/login', function (req, res, next) {
   });
 });
 
+router.get('/registro', function(req, res, next) {
+  if (global.logueado) {
+    res.redirect('/');
+  } else {
+    res.render('registro', { title: 'Express' });
+  }
+});
+
+router.post('/registro', function(req, res, next) {
+  var nombre = req.body.txtNombre;
+  var apellido = req.body.txtApellido;
+  var correo = req.body.txtCorreo;
+  var contrasena = req.body.txtContrasena;
+  var fileName = '';
+  var pathFiles = './public/img/usuarios/profile_';
+  var fullPath = pathFiles + correo + '_';
+
+  if (req.files) {
+    try {
+      fileName = req.files.fileFoto.name;
+      let imgToSave = req.files.fileFoto;
+   
+      // Use the mv() method to place the file somewhere on your server
+      imgToSave.mv(fullPath + fileName, function(err) {
+        if (err) {
+          console.log('<imgError>');
+          console.log(err);
+          console.log('</imgError>');
+        }
+
+        console.log('Archivo guardado.');
+      });
+    } catch(err) {
+      console.log(err);
+    }
+  } else {
+    fileName = 'default.png';
+  }
+
+  res.redirect('/registro');
+});
+
 router.get('/logout', function(req, res, next) {
   global.sessionerror = false;
   global.logueado = false;
@@ -60,14 +102,6 @@ router.get('/carrito', function(req, res, next) {
     res.render('carrito', { title: 'Express' });
   } else {
     res.redirect('/login');
-  }
-});
-
-router.get('/registro', function(req, res, next) {
-  if (global.logueado) {
-    res.redirect('/');
-  } else {
-    res.render('registro', { title: 'Express' });
   }
 });
 
