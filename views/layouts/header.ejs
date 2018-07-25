@@ -47,9 +47,20 @@
 						<li><a href="#"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>
 					</ul>
 					<ul class="header-links pull-right">
-						<li><a href="#"><i class="fa fa-dollar"></i> MXN</a></li>
-						<li><a href="/login"><i class="fa fa-user-o"></i> Iniciar Sesión</a></li>
-						<li><a href="/usuarios"><i class="fa fa-user-o"></i>Regístrate</a></li>
+						<li><a><i class="fa fa-dollar"></i> MXN</a></li>
+						<li><a href="<% if(global.logueado) { %>/logout<% } else { %>/login<% } %>"><i class="fa fa-user-o"></i>
+							<% if(global.logueado) { %>
+							Cerrar Sesi&oacute;n
+							<% } else { %>
+							Iniciar Sesi&oacute;n
+							<% } %>
+						</a></li>
+
+						<% if(global.logueado) { %>
+						<li><a><i class="fa fa-user-o"></i><%= global.usuario %></a></li>
+						<% } else { %>
+						<li><a href="/registro"><i class="fa fa-user-o"></i>Regístrate</a></li>
+						<% } %>
 					</ul>
 				</div>
 			</div>

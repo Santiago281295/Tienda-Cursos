@@ -12,11 +12,17 @@
             <div class="section-title">
               <h3 class="title">Iniciar Sesi&oacute;n.</h3>
             </div>
+            <% if(global.sessionerror) { %>
+            <div class="alert alert-danger alert-dismissible">
+              <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+              <strong>Error!</strong> Correo o contrase&ntilde;a incorrectos.
+            </div>
+            <% } %>
             <div class="form-group">
-              <input class="input" type="text" name="txtCorreo" placeholder="Correo Electrónio">
+              <input class="input" type="text" name="txtCorreo" placeholder="Correo Electrónio" value="<%= global.usuario %>" autofocus>
             </div>
             <div class="form-group">
-              <input class="input" type="text" name="txtContrasena" placeholder="Contraseña">
+              <input class="input" type="password" name="txtContrasena" placeholder="Contraseña">
             </div>
             <div class="form-group">
               <input class="primary-btn cta-btn" type="submit" value="Iniciar Sesión">
