@@ -8,21 +8,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
     <!-- Bootstrap CSS-->
-    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://<%= global.dirHost %>/Back/vendor/bootstrap/css/bootstrap.min.css">
     <!-- Font Awesome CSS-->
-    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://<%= global.dirHost %>/Back/vendor/font-awesome/css/font-awesome.min.css">
     <!-- Fontastic Custom icon font-->
     <link rel="stylesheet" href="css/fontastic.css">
     <!-- Google fonts - Roboto -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
     <!-- jQuery Circle-->
-    <link rel="stylesheet" href="ss/grasp_mobile_progress_circle-1.0.0.min.css">
+    <link rel="stylesheet" href="http://<%= global.dirHost %>/Back/css/grasp_mobile_progress_circle-1.0.0.min.css">
     <!-- Custom Scrollbar-->
-    <link rel="stylesheet" href="vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="http://<%= global.dirHost %>/Back/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
     <!-- theme stylesheet-->
-    <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
+    <link rel="stylesheet" href="http://<%= global.dirHost %>/Back/css/style.default.css" id="theme-stylesheet">
     <!-- Custom stylesheet - for your changes-->
-    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="http://<%= global.dirHost %>/Back/css/custom.css">
     <!-- Favicon-->
     <link rel="shortcut icon" href="img/favicon.ico">
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
@@ -36,11 +36,11 @@
         <!-- Sidebar Header    -->
         <div class="sidenav-header d-flex align-items-center justify-content-center">
           <!-- User Info-->
-          <div class="sidenav-header-inner text-center"><img src="../img/usuarios/<%= global.fotousuario %>" alt="person" class="img-fluid rounded-circle">
+          <div class="sidenav-header-inner text-center"><img src="../../img/usuarios/<%= global.fotousuario %>" alt="person" class="img-fluid rounded-circle">
             <h2 class="h5"><%= global.nombreUsuario %></h2><span>Administrador</span>
           </div>
           <!-- Small Brand information, appears on minimized sidebar-->
-          <div class="sidenav-header-logo"><a href="index.html" class="brand-small text-center"> <strong>W</strong><strong class="text-primary"><!-- D --></strong></a></div>
+          <div class="sidenav-header-logo"><a href="/Back" class="brand-small text-center"> <strong>W</strong><strong class="text-primary"><!-- D --></strong></a></div>
         </div>
         <!-- Sidebar Navigation Menus-->
         <div class="main-menu">
@@ -48,8 +48,8 @@
           <ul id="side-main-menu" class="side-menu list-unstyled">
             <li><a href="/" target="_blank"> <i class="fa fa-desktop"></i>Vistar la Tienda</a></li>
             <li><a href="/Back"> <i class="fa fa-dashboard"></i>Panel Administrativo</a></li>
-            <li><a href="/Back/cursos"> <i class="icon-form"></i>Gesti&oacute;n de Cursos</a></li>
-            <li><a href="#"> <i class="fa fa-user"></i>Gesti&oacute;n de Usuarios</a></li>
+            <li><a href="/Back/cursos"> <i class="fa fa-book"></i>Gesti&oacute;n de Cursos</a></li>
+            <li><a href="/Back/usuarios"> <i class="fa fa-user"></i>Gesti&oacute;n de Usuarios</a></li>
           </ul>
       </div>
     </nav>
@@ -59,7 +59,7 @@
         <nav class="navbar">
           <div class="container-fluid">
             <div class="navbar-holder d-flex align-items-center justify-content-between">
-              <div class="navbar-header"><a id="toggle-btn" href="#" class="menu-btn"><i class="icon-bars"> </i></a><a href="index.html" class="navbar-brand">
+              <div class="navbar-header"><a id="toggle-btn" href="#" class="menu-btn"><i class="fa fa-bars"> </i></a><a href="/Back" class="navbar-brand">
                   <div class="brand-text d-none d-md-inline-block"><span>Panel </span><strong class="text-primary">Administrativo</strong></div></a></div>
               <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
                 <!-- Notifications dropdown-->

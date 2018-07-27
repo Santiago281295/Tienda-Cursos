@@ -5,7 +5,7 @@
       <h4>Listado de Cursos</h4>
       <br>
       <!-- <input type="submit" value="Submit" class="mr-3 btn btn-primary"> -->
-      <a href="/Back/cursos/nuevo" class="mr-3 btn btn-primary">
+      <a href="/Back/curso_nuevo" class="mr-3 btn btn-primary">
       	<i class="fa fa-plus-circle fa-lg"></i> Agregar nuevo curso
       </a>
     </div>
@@ -23,6 +23,7 @@
               <th>Tecnolog&iacute;a</th>
               <th>Autor</th>
               <th>Ventas Totales</th>
+              <th>Acciones</th>
             </tr>
           </thead>
           <tbody>
@@ -38,6 +39,14 @@
             	<th><%= queryCursos[i].Tecnologia %></th>
             	<th><%= queryCursos[i].Autor %></th>
             	<th><%= queryCursos[i].TotVendidos %></th>
+              <th>
+                <a href="/Back/curso_editar/<%= queryCursos[i].IDProducto %>" class="btn btn-primary">
+                  <i class="fa fa-pencil fa-lg"></i> Editar
+                </a>
+                <a href="/Back/curso_eliminar/<%= queryCursos[i].IDProducto %>" class="btn btn-danger">
+                  <i class="fa fa-trash-o fa-lg"></i> Eliminar
+                </a>
+              </th>
             </tr>
 
             <% } %>
