@@ -4,21 +4,21 @@ var db = require('../models/db.js');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Wdemii-Inicio' });
 });
 
 router.get('/login', function(req, res, next) {
   if(global.logueado) {
     res.redirect('/');
   } else {
-    res.render('login', { title: 'Express' });
+    res.render('login', { title: 'Wdemii-Inicias Sesión' });
   }
 });
 
 router.post('/login', function (req, res, next) {
   var correo = req.body.txtCorreo;
   var contrasena = req.body.txtContrasena;
-  global.usuario = null;
+  // global.usuario = null;
 
   db.query('SELECT * FROM Usuarios WHERE Correo=? AND Contrasena=? LIMIT 1', [correo, contrasena], function(err, results) {
     if (err){
@@ -31,6 +31,7 @@ router.post('/login', function (req, res, next) {
       global.usuario = results[0].Correo;
       global.logueado = true;
       global.sessionerror = false;
+      global.nombreUsuario = results[0].Nombre;
 
       if(results[0].Correo == 'aurelio16.mex@gmail.com') {
         res.redirect('/Back');
@@ -51,7 +52,7 @@ router.get('/registro', function(req, res, next) {
   if (global.logueado) {
     res.redirect('/');
   } else {
-    res.render('registro', { title: 'Express' });
+    res.render('registro', { title: 'Wdemii-Registro' });
   }
 });
 
@@ -80,13 +81,23 @@ router.post('/registro', function(req, res, next) {
         console.log('Archivo guardado.');
       });
     } catch(err) {
+      fileName = 'default.png';
       console.log(err);
     }
   } else {
     fileName = 'default.png';
   }
 
-  res.redirect('/registro');
+  db.query('INSERT INTO usuarios (Nombre, Apellido, Correo, Contrasena, Foto, TipoUsu, Cliente, Status) VALUES (?, ?, ?, ?, ?, ?, ?, ?)', [nombre, apellido, correo, contrasena, fileName, 'Usuario', 0, 1], function(err, results) {
+    try {
+      global.usuario = correo;
+      global.logueado = true;
+
+      res.redirect('/');
+    } catch(err) {
+      res.redirect('/registro');
+    }
+  });
 });
 
 router.get('/logout', function(req, res, next) {
@@ -99,7 +110,7 @@ router.get('/logout', function(req, res, next) {
 
 router.get('/carrito', function(req, res, next) {
   if (global.logueado) {
-    res.render('carrito', { title: 'Express' });
+    res.render('carrito', { title: 'Wdemii-Carrito de Compras' });
   } else {
     res.redirect('/login');
   }
@@ -110,7 +121,7 @@ router.get('/carrito', function(req, res, next) {
 router.get('/Back', function(req, res, next) {
 	if (global.logueado) {
     if (global.usuario == 'aurelio16.mex@gmail.com') {
-      res.render('Back/index', { title: 'Express' });
+      res.render('Back/index', { title: 'Wdemii-Administrador' });
     } else {
       res.redirect('/');
     }
@@ -119,10 +130,10 @@ router.get('/Back', function(req, res, next) {
   }
 });
 
-router.get('/Back/productos', function(req, res, next) {
+router.get('/Back/cursos', function(req, res, next) {
   if (global.logueado) {
     if (global.usuario == 'aurelio16.mex@gmail.com') {
-      res.render('Back/productos', { title: 'Express' });
+      res.render('Back/cursos', { title: 'Wdemii-Gestión de Cursos' });
     } else {
       res.redirect('/');
     }
