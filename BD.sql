@@ -66,4 +66,4 @@ CREATE TABLE ProductosUsuario(
     FOREIGN KEY(FKProducto) REFERENCES Productos(IDProducto)
 );
 
-INSERT INTO Usuarios (Nombre, Apellido, Correo, Contrasena, Foto, TipoUsu, Cliente, Status) VALUES ('Aurelio', 'Mex Mex', 'aurelio16.mex@gmail.com', 'aureliomex', 'https://www.google.com.mx/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwi4p47ez6_cAhVScq0KHcPOAJUQjRx6BAgBEAU&url=https%3A%2F%2Ficon-icons.com%2Fes%2Ficono%2Fusuario%2F66546&psig=AOvVaw1EBUwUwRaZVN2lLXVFpGm-&ust=1532242893884480', 'Administrador', 0, 1);
+INSERT INTO Usuarios (Nombre, Apellido, Correo, Contrasena, Foto, TipoUsu, Cliente, Status) VALUES ('Aurelio', 'Mex Mex', 'aurelio16.mex@gmail.com', 'aureliomex', 'default.png', 'Administrador', 0, 1);

@@ -36,7 +36,7 @@
         <!-- Sidebar Header    -->
         <div class="sidenav-header d-flex align-items-center justify-content-center">
           <!-- User Info-->
-          <div class="sidenav-header-inner text-center"><img src="img/avatar-1.jpg" alt="person" class="img-fluid rounded-circle">
+          <div class="sidenav-header-inner text-center"><img src="../img/usuarios/<%= global.fotousuario %>" alt="person" class="img-fluid rounded-circle">
             <h2 class="h5"><%= global.nombreUsuario %></h2><span>Administrador</span>
           </div>
           <!-- Small Brand information, appears on minimized sidebar-->
@@ -46,12 +46,10 @@
         <div class="main-menu">
           <h5 class="sidenav-heading">Men&uacute;</h5>
           <ul id="side-main-menu" class="side-menu list-unstyled">
-            <li><a href="/Back"> <i class="icon-home"></i>Panel Administrativo</a></li>
-            <li><a href="/" target="_blank"> <i class="icon-screen"></i>Vista de la Tienda</a></li>
+            <li><a href="/" target="_blank"> <i class="fa fa-desktop"></i>Vistar la Tienda</a></li>
+            <li><a href="/Back"> <i class="fa fa-dashboard"></i>Panel Administrativo</a></li>
             <li><a href="/Back/cursos"> <i class="icon-form"></i>Gesti&oacute;n de Cursos</a></li>
-            <!-- <li><a href="forms.html"> <i class="icon-form"></i>Forms</a></li> -->
-
-            
+            <li><a href="#"> <i class="fa fa-user"></i>Gesti&oacute;n de Usuarios</a></li>
           </ul>
       </div>
     </nav>
@@ -109,8 +107,8 @@
                           <h3 class="h5">Ashley Wood</h3><span>sent you a direct message</span><small>3 days ago at 7:58 pm - 10.06.2014</small>
                         </div></a></li>
                     <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong> <i class="fa fa-envelope"></i>Read all messages    </strong></a></li>
-                  </ul> -->
-                </li>
+                  </ul>
+                </li> -->
                 <!-- Languages dropdown    -->
                 <!-- <li class="nav-item dropdown"><a id="languages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link language dropdown-toggle"><img src="img/flags/16/GB.png" alt="English"><span class="d-none d-sm-inline-block">English</span></a>
                   <ul aria-labelledby="languages" class="dropdown-menu">
@@ -125,3 +123,13 @@
           </div>
         </nav>
       </header>
+
+      <!-- Breadcrumb-->
+      <div class="breadcrumb-holder">
+        <div class="container-fluid">
+          <ul class="breadcrumb">
+            <!-- <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active">Tables       </li> -->
+          </ul>
+        </div>
+      </div>

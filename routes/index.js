@@ -20,7 +20,7 @@ router.post('/login', function (req, res, next) {
   var contrasena = req.body.txtContrasena;
   // global.usuario = null;
 
-  db.query('SELECT * FROM Usuarios WHERE Correo=? AND Contrasena=? LIMIT 1', [correo, contrasena], function(err, results) {
+  db.query('SELECT * FROM Usuarios WHERE Correo=? AND Contrasena=? AND Status=1 LIMIT 1', [correo, contrasena], function(err, results) {
     if (err){
       console.log(err);
 
@@ -32,6 +32,7 @@ router.post('/login', function (req, res, next) {
       global.logueado = true;
       global.sessionerror = false;
       global.nombreUsuario = results[0].Nombre;
+      global.fotousuario = results[0].Foto;
 
       if(results[0].Correo == 'aurelio16.mex@gmail.com') {
         res.redirect('/Back');
@@ -80,6 +81,8 @@ router.post('/registro', function(req, res, next) {
 
         console.log('Archivo guardado.');
       });
+
+      fileName = 'profile_' + correo + '_' + fileName;
     } catch(err) {
       fileName = 'default.png';
       console.log(err);
@@ -118,6 +121,17 @@ router.get('/carrito', function(req, res, next) {
 
  /*Rutas Del Backend*/
 
+ /*
+if (global.logueado) {
+  if (global.usuario == 'aurelio16.mex@gmail.com') {
+  } else {
+    res.redirect('/');
+  }
+} else {
+  res.redirect('/login');
+}
+ */
+
 router.get('/Back', function(req, res, next) {
 	if (global.logueado) {
     if (global.usuario == 'aurelio16.mex@gmail.com') {
@@ -133,7 +147,15 @@ router.get('/Back', function(req, res, next) {
 router.get('/Back/cursos', function(req, res, next) {
   if (global.logueado) {
     if (global.usuario == 'aurelio16.mex@gmail.com') {
-      res.render('Back/cursos', { title: 'Wdemii-Gestión de Cursos' });
+      db.query('SELECT * FROM productos WHERE Status=1', function(err, results) {
+        if (err){
+          console.log(err);
+
+          throw err;
+        }
+
+        res.render('Back/cursos/index', { title: 'Wdemii-Gestión de Cursos', queryCursos: results });
+      });
     } else {
       res.redirect('/');
     }
@@ -141,5 +163,17 @@ router.get('/Back/cursos', function(req, res, next) {
     res.redirect('/login');
   }
 });
+
+router.get('/Back/cursos/nuevo', function (req, res, next) {
+  if (global.logueado) {
+    if (global.usuario == 'aurelio16.mex@gmail.com') {
+      res.render('Back/cursos/create', { title: 'Wdemii-Agregar Cursos' });
+    } else {
+      res.redirect('/');
+    }
+  } else {
+    res.redirect('/login');
+  }
+})
 
 module.exports = router;

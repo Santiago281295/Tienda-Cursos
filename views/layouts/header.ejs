@@ -48,6 +48,11 @@
 					</ul>
 					<ul class="header-links pull-right">
 						<li><a><i class="fa fa-dollar"></i> MXN</a></li>
+						
+						<% if(global.logueado) { %>
+						<li><a href="/Back"><i class="fa fa-dashboard"></i>Administrar</a></li>
+						<% } %>
+
 						<li><a href="<% if(global.logueado) { %>/logout<% } else { %>/login<% } %>"><i class="fa fa-user-o"></i>
 							<% if(global.logueado) { %>
 							Cerrar Sesi&oacute;n
