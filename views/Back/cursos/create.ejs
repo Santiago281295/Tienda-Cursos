@@ -4,20 +4,20 @@
   <div class="col-lg-7">
     <div class="card">
       <div class="card-header d-flex align-items-center">
-        <h4>Datos del manual</h4>
+        <h4>Datos del curso</h4>
       </div>
       <div class="card-body">
-        <form action="/Back/manual_nuevo" method="POST" enctype="multipart/form-data" class="form-horizontal">
+        <form action="/Back/curso_nuevo" method="POST" enctype="multipart/form-data" class="form-horizontal">
           <div class="form-group row">
-            <label class="col-sm-2 form-control-label">Nombre(s)</label>
+            <label class="col-sm-2 form-control-label">T&iacute;tulo</label>
             <div class="col-sm-10">
-              <input type="text" placeholder="Ej.: Jesus Manuel" name="txtNombre" class="form-control" required>
+              <input type="text" placeholder="Ej.: NodeJS de Cero a Maestro" name="txtTitulo" class="form-control" required>
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-sm-2 form-control-label">Apellido(s)</label>
+            <label class="col-sm-2 form-control-label">Descripci&oacute;n</label>
             <div class="col-sm-10">
-              <input type="text" placeholder="Ej.: Torres Pech" name="txtApellido" class="form-control" required>
+              <input type="text" placeholder="Descripción del curso" name="txtDescripcion" class="form-control" required>
             </div>
           </div>
           <div class="form-group row">
