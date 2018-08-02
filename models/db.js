@@ -26,7 +26,7 @@ var mysql = require('mysql');
             return( useDefaultTypeCasting() );
         }
     });*/
-    /*var connection = mysql.createConnection({
+    var connection = mysql.createConnection({
         host: 'cursosutm.mysql.database.azure.com',
         port: 3306,
         user: 'Santiago@cursosutm',
@@ -49,8 +49,9 @@ var mysql = require('mysql');
 
             return( useDefaultTypeCasting() );
         }
-    });*/
-    var connection = mysql.createConnection({
+    });
+
+    /*var connection = mysql.createConnection({
         host: 'den1.mysql6.gear.host',
         port: 3306,
         user: 'tiendacursos',
@@ -76,7 +77,7 @@ var mysql = require('mysql');
     });
 // } else {
 //     console.log("No hay Conexión");
-// }
+// }*/
 
 connection.connect(function(err) {
     if (err) {
