@@ -4,44 +4,47 @@
   <div class="col-lg-7">
     <div class="card">
       <div class="card-header d-flex align-items-center">
-        <h4>Datos del curso</h4>
+        <h4>Editar datos del curso</h4>
       </div>
       <div class="card-body">
-        <form action="/Back/curso_nuevo" method="POST" enctype="multipart/form-data" class="form-horizontal">
+        <form action="/Back/curso_editar/<%= queryEdit[0].IDProducto %>" method="POST" enctype="multipart/form-data" class="form-horizontal">
+          <input id="txtId" name="txtId" type="hidden" value="<%= queryEdit[0].IDProducto %>">
+          <input id="txtFoto" name="txtImagen" type="hidden" value="<%= queryEdit[0].Imagen %>">
+          <input id="txtLibro" name="txtLibro" type="hidden" value="<%= queryEdit[0].Libro %>">
           <div class="form-group row">
             <label class="col-sm-3 form-control-label">T&iacute;tulo</label>
             <div class="col-sm-9">
-              <input type="text" placeholder="Ej.: NodeJS de Cero a Maestro" name="txtTitulo" class="form-control" required>
+              <input type="text" placeholder="Ej.: NodeJS de Cero a Maestro" name="txtTitulo" class="form-control" value="<%= queryEdit[0].Titulo %>" required>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-3 form-control-label">Descripci&oacute;n</label>
             <div class="col-sm-9">
-              <input type="text" placeholder="Descripción del curso" name="txtDescripcion" class="form-control" required>
+              <input type="text" placeholder="Descripción del curso" name="txtDescripcion" class="form-control" value="<%= queryEdit[0].Descripcion %>" required>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-3 form-control-label">Precio</label>
             <div class="col-sm-9">
-              <input type="number" placeholder="Precio del Curso" name="txtPrecio" step="0.01" min="0" max="9999" value="0" class="form-control" required>
+              <input type="number" placeholder="Precio del Curso" name="txtPrecio" step="0.01" min="0" max="9999" value="<%= queryEdit[0].Precio %>" class="form-control" required>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-3 form-control-label">Stock</label>
             <div class="col-sm-9">
-              <input type="number" placeholder="Cantidad en Stock" name="txtStock" step="1" min="0" max="9999" value="0" class="form-control" required>
+              <input type="number" placeholder="Cantidad en Stock" name="txtStock" step="1" min="0" max="9999" value="<%= queryEdit[0].Stock %>" class="form-control" required>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-3 form-control-label">Tecnolog&iacute;a</label>
             <div class="col-sm-9">
-              <input type="text" placeholder="Ej.: NodeJS + Express" name="txtTecnologia" class="form-control" required>
+              <input type="text" placeholder="Ej.: NodeJS + Express" name="txtTecnologia" class="form-control" value="<%= queryEdit[0].Tecnologia %>" required>
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-3 form-control-label">Autor</label>
             <div class="col-sm-9">
-              <input type="text" placeholder="Ej.: Rocardo May" name="txtAutor" class="form-control" required>
+              <input type="text" placeholder="Ej.: Rocardo May" name="txtAutor" class="form-control" value="<%= queryEdit[0].Autor %>" required>
             </div>
           </div>
           <!-- <div class="form-group row">
@@ -53,13 +56,13 @@
           <div class="form-group row">
             <label class="col-sm-3 form-control-label">Foto</label>
             <div class="col-sm-9">
-              <input id="fileFoto" name="fileFoto" type="file" accept="image/*" class="form-control" onchange="loadFileInfo()" required>
+              <input id="fileFoto" name="fileFoto" type="file" accept="image/*" class="form-control" onchange="loadFileInfo()">
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-3 form-control-label">Libro</label>
             <div class="col-sm-9">
-              <input id="fileLibro" name="fileLibro" type="file" accept="application/pdf" class="form-control" required>
+              <input id="fileLibro" name="fileLibro" type="file" accept="application/pdf" class="form-control">
             </div>
           </div>
 

@@ -11,7 +11,7 @@
     </div>
     <div class="card-body">
       <div class="table-responsive">
-        <table class="table table-striped table-hover table-sm">
+        <table class="table table-striped table-hover table-sm table-bordered">
           <thead>
             <tr>
               <th>Clave</th>
@@ -21,7 +21,7 @@
               <th>Contrase&ntilde;a</th>
               <th style="width: 10%;">Foto</th>
               <th>Tipo de Usuario</th>
-              <th>Cliente</th>
+              <!-- <th>Cliente</th> -->
               <th>Acciones</th>
             </tr>
           </thead>
@@ -34,10 +34,10 @@
             	<th><%= queryUsuarios[i].Apellido %></th>
             	<th><%= queryUsuarios[i].Correo %></th>
             	<th><%= queryUsuarios[i].Contrasena %></th>
-            	<th><img src="../img/usuarios/<%= queryUsuarios[i].Foto %>" alt="<%= queryUsuarios[i].Foto %>" style="width: 40%">
+            	<th><img src="../img/usuarios/<%= queryUsuarios[i].Foto %>" alt="<%= queryUsuarios[i].Foto %>" style="width: 60%">
               </th>
             	<th><%= queryUsuarios[i].TipoUsu %></th>
-            	<th>
+            	<!-- <th>
                 <% if (queryUsuarios[i].Cliente == true) { %>
                 <div class="i-checks">
                   <input type="checkbox" class="form-control-custom" checked>
@@ -49,7 +49,7 @@
                   <label></label>
                 </div>
                 <% } %>
-              </th>
+              </th> -->
               <th>
                 <% if (queryUsuarios[i].IDUsuario != 1) { %>
                   <a href="/Back/usuario_editar/<%= queryUsuarios[i].IDUsuario%>" class="btn btn-primary">

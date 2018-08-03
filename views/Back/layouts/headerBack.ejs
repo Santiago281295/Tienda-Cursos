@@ -8,21 +8,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
     <!-- Bootstrap CSS-->
-    <link rel="stylesheet" href="http://<%= global.dirHost %>/Back/vendor/bootstrap/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="/Back/vendor/bootstrap/css/dataTables_bootstrap4.min.css"> -->
+    <link rel="stylesheet" href="/Back/vendor/bootstrap/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="http://<%= global.dirHost %>/Back/vendor/bootstrap/css/bootstrap.min.css"> -->
     <!-- Font Awesome CSS-->
-    <link rel="stylesheet" href="http://<%= global.dirHost %>/Back/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/Back/vendor/font-awesome/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="http://<%= global.dirHost %>/Back/vendor/font-awesome/css/font-awesome.min.css"> -->
     <!-- Fontastic Custom icon font-->
-    <link rel="stylesheet" href="css/fontastic.css">
+    <link rel="stylesheet" href="/Back/css/fontastic.css">
     <!-- Google fonts - Roboto -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
     <!-- jQuery Circle-->
-    <link rel="stylesheet" href="http://<%= global.dirHost %>/Back/css/grasp_mobile_progress_circle-1.0.0.min.css">
+    <link rel="stylesheet" href="/Back/css/grasp_mobile_progress_circle-1.0.0.min.css">
+    <!-- <link rel="stylesheet" href="http://<%= global.dirHost %>/Back/css/grasp_mobile_progress_circle-1.0.0.min.css"> -->
     <!-- Custom Scrollbar-->
-    <link rel="stylesheet" href="http://<%= global.dirHost %>/Back/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="/Back/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
+    <!-- <link rel="stylesheet" href="http://<%= global.dirHost %>/Back/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css"> -->
     <!-- theme stylesheet-->
-    <link rel="stylesheet" href="http://<%= global.dirHost %>/Back/css/style.default.css" id="theme-stylesheet">
+    <link rel="stylesheet" href="/Back/css/style.default.css" id="theme-stylesheet">
+    <!-- <link rel="stylesheet" href="http://<%= global.dirHost %>/Back/css/style.default.css" id="theme-stylesheet"> -->
     <!-- Custom stylesheet - for your changes-->
-    <link rel="stylesheet" href="http://<%= global.dirHost %>/Back/css/custom.css">
+    <link rel="stylesheet" href="/Back/css/custom.css">
+    <!-- <link rel="stylesheet" href="http://<%= global.dirHost %>/Back/css/custom.css"> -->
     <!-- Favicon-->
     <link rel="shortcut icon" href="img/favicon.ico">
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
@@ -49,7 +56,13 @@
             <li><a href="/" target="_blank"> <i class="fa fa-desktop"></i>Vistar la Tienda</a></li>
             <li><a href="/Back"> <i class="fa fa-dashboard"></i>Panel Administrativo</a></li>
             <li><a href="/Back/cursos"> <i class="fa fa-book"></i>Gesti&oacute;n de Cursos</a></li>
-            <li><a href="/Back/usuarios"> <i class="fa fa-user"></i>Gesti&oacute;n de Usuarios</a></li>
+            <!-- <li><a href="/Back/usuarios"> <i class="fa fa-user"></i>Gesti&oacute;n de Usuarios</a></li> -->
+            <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Gesti&oacute;n de Usuarios</a>
+              <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
+                <li><a href="/Back/usuarios">Usuarios registrados</a></li>
+                <li><a href="/Back/clientes">Nuestros clientes</a></li>
+              </ul>
+            </li>
           </ul>
       </div>
     </nav>

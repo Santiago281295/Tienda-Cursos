@@ -8,6 +8,7 @@ var mysql = require('mysql');
         user: 'root',
         password: '',
         database: 'proyectopaypal',
+        multipleStatements: true,
         insecureAuth: true,
         // Con este atributo se Castean todos los campos del tipo BIT a BOOLEAN
         typeCast: function castField(field, useDefaultTypeCasting ) {
@@ -32,6 +33,7 @@ var mysql = require('mysql');
         user: 'Santiago@cursosutm',
         password: 'Alpha281295@',
         database: 'proyectopaypal',
+        multipleStatements: true,
         insecureAuth: true,
         // Con este atributo se Castean todos los campos del tipo BIT a BOOLEAN
         typeCast: function castField(field, useDefaultTypeCasting ) {
@@ -56,6 +58,7 @@ var mysql = require('mysql');
         user: 'tiendacursos',
         password: 'Xa5883ZXT~i-',
         database: 'tiendacursos',
+        multipleStatements: true,
         insecureAuth: true,
         // Con este atributo se Castean todos los campos del tipo BIT a BOOLEAN
         typeCast: function castField(field, useDefaultTypeCasting ) {

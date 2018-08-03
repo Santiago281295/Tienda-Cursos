@@ -11,7 +11,7 @@
     </div>
     <div class="card-body">
       <div class="table-responsive">
-        <table class="table table-striped table-hover table-sm">
+        <table class="table table-striped table-hover table-sm table-bordered">
           <thead>
             <tr>
               <th>Clave</th>
@@ -19,7 +19,7 @@
               <th>Descripci&oacute;n</th>
               <th>Precio</th>
               <th>Stock</th>
-              <th>Imagen</th>
+              <th style="width: 10%;">Imagen</th>
               <th>Tecnolog&iacute;a</th>
               <th>Autor</th>
               <th>Ventas Totales</th>
@@ -35,7 +35,7 @@
             	<th><%= queryCursos[i].Descripcion %></th>
             	<th><%= queryCursos[i].Precio%></th>
             	<th><%= queryCursos[i].Stock %></th>
-            	<th><img src="../../img/usarios/<%= queryCursos[i].Imagen %>" alt="<%= queryCursos[i].Imagen %>" style="max-width: 10%;"></th>
+            	<th><img src="../../img/libros/<%= queryCursos[i].Imagen %>" alt="<%= queryCursos[i].Imagen %>" style="max-width: 100%;"></th>
             	<th><%= queryCursos[i].Tecnologia %></th>
             	<th><%= queryCursos[i].Autor %></th>
             	<th><%= queryCursos[i].TotVendidos %></th>

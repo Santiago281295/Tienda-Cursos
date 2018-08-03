@@ -1,0 +1,42 @@
+<%- include ../layouts/headerBack.ejs %>
+
+<div class="card">
+    <div class="card-header">
+      <h4>Nuestros Clientes</h4>
+      <br>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-striped table-hover table-sm  table-bordered">
+          <thead>
+            <tr>
+              <th>Clave</th>
+              <th>Nombre(s)</th>
+              <th>Apellido(s)</th>
+              <th>Correo</th>
+              <th>Contrase&ntilde;a</th>
+              <th style="width: 10%;">Foto</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for(var i=0; i<queryUsuarios.length; i++) { %>
+
+            <tr>
+            	<th><%= queryUsuarios[i].IDUsuario %></th>
+            	<th><%= queryUsuarios[i].Nombre %></th>
+            	<th><%= queryUsuarios[i].Apellido %></th>
+            	<th><%= queryUsuarios[i].Correo %></th>
+            	<th><%= queryUsuarios[i].Contrasena %></th>
+            	<th><img src="../img/usuarios/<%= queryUsuarios[i].Foto %>" alt="<%= queryUsuarios[i].Foto %>" style="width: 60%">
+              </th>
+            </tr>
+
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+</div>
+
+<%- include ../layouts/footerBack.ejs %>

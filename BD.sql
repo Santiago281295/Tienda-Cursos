@@ -17,6 +17,7 @@ CREATE TABLE Productos(
     Precio		FLOAT,
     Stock		INT,
     Imagen		VARCHAR(1000),
+    Libro       VARCHAR(1000),
     Tecnologia	VARCHAR(250),
     Autor		VARCHAR(250),
     Link		LONGTEXT,
