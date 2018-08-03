@@ -153,6 +153,40 @@ router.get('/cursos', function(req, res, next) {
   res.render('cursos', { title: 'Wdemii-Nuestros cursos' });
 })
 
+router.get('/cursos/:id', function(req, res, next) {
+  global.dirHost = req.get('host');
+  var id = req.params.id;
+
+  db.query("SELECT * FROM productos WHERE IDProducto=? AND Status=1; SELECT cxp.Comentario, CONCAT(u.Nombre, ' ', u.Apellido) AS Usuario FROM comentariosproductos cxp INNER JOIN usuarios u ON cxp.FKUsuario=u.IDUsuario INNER JOIN productos p ON cxp.FKProducto=p.IDProducto WHERE cxp.FKProducto=?;", [id, id], function(err, results) {
+    if (err){
+      console.log(err);
+
+      throw err;
+    }
+    res.render('curso_detalle', { title: 'Wdemii-Detalles del Curso', queryDetalle: results[0], queryComentarios: results[1] });
+  });
+})
+
+router.post('/cursos/:id', function(req, res, next) {
+  global.dirHost = req.get('host');
+  if (global.logueado) {
+    var idproductoselec = req.params.id;
+    var comentario = req.body.txtComentario;
+    var idusuariolog = global.id;
+
+    db.query("INSERT INTO comentariosproductos (Comentario, FKUsuario, FKProducto) VALUES (?, ?, ?);", [comentario, idusuariolog, idproductoselec], function(err, results) {
+      if (err){
+        console.log(err);
+
+        throw err;
+      }
+      res.redirect('/cursos/' + idproductoselec);
+  });
+  } else {
+    res.redirect('/login');
+  }
+})
+
  /*Rutas Del Backend*/
 
  /*

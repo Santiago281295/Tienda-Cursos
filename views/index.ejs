@@ -97,7 +97,7 @@
 											</div>
 											<div class="product-body">
 												<p class="product-category">Nombre</p>
-												<h3 class="product-name"><a href="#"><%= queryNuevos[i].Titulo %></a></h3>
+												<h3 class="product-name"><a href="/cursos/<%= queryNuevos[i].IDProducto %>"><%= queryNuevos[i].Titulo %></a></h3>
 												<h4 class="product-price">$ <%= queryNuevos[i].Precio %><!--  <del class="product-old-price">$990.00</del> --></h4>
 												<div class="product-rating">
 													<i class="fa fa-star"></i>
@@ -109,7 +109,7 @@
 												<div class="product-btns">
 													<!-- <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button> -->
 													<button class="add-to-compare"><i class="fa fa-usd"></i><span class="tooltipp">Comprar</span></button>
-													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">Detalles</span></button>
+													<button class="quick-view" onclick="window.location='/cursos/<%= queryNuevos[i].IDProducto %>'"><i class="fa fa-eye"></i><span class="tooltipp">Detalles</span></button>
 												</div>
 											</div>
 											<div class="add-to-cart">
@@ -176,7 +176,7 @@
 											</div>
 											<div class="product-body">
 												<p class="product-category">Nombre</p>
-												<h3 class="product-name"><a href="#"><%= queryExitos[i].Titulo %></a></h3>
+												<h3 class="product-name"><a href="/cursos/<%= queryExitos[i].IDProducto %>"><%= queryExitos[i].Titulo %></a></h3>
 												<h4 class="product-price">$ <%= queryExitos[i].Precio %><!--  <del class="product-old-price">$990.00</del> --></h4>
 												<div class="product-rating">
 													<i class="fa fa-star"></i>
@@ -188,7 +188,7 @@
 												<div class="product-btns">
 													<!-- <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">Al carrito</span></button> -->
 													<button class="add-to-compare"><i class="fa fa-usd"></i><span class="tooltipp">Comprar</span></button>
-													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">Detalles</span></button>
+													<button class="quick-view" onclick="window.location='/cursos/<%= queryExitos[i].IDProducto %>'"><i class="fa fa-eye"></i><span class="tooltipp">Detalles</span></button>
 												</div>
 											</div>
 											<div class="add-to-cart">

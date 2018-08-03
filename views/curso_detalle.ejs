@@ -1,0 +1,129 @@
+<%- include layouts/header.ejs %>
+ 
+<body>
+    <div id="breadcrumb" class="section">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="breadcrumb-header">Detalles del Curso</h3>
+                </div>
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- SECTION -->
+    <div class="section">
+        <!-- container -->
+        <div class="container">
+            <!-- <div class="row">
+                <div class="section-title">
+                    <h3 class="title">Detalles del Curso</h3>
+                </div>
+            </div> -->
+            <!-- row -->
+            <div class="row">
+                <input id="txtIDProducto" name="txtIDProducto" type="hidden" value="<%= queryDetalle[0].IDProducto %>">
+                <!-- Detalles del Curso -->
+                <div class="col-md-6 order-details">
+                    <div class="section-title text-center">
+                        <h3 class="title"><%= queryDetalle[0].Titulo %><!-- Nombre del Curso obtenido de la Base de Datos --></h3>
+                    </div>
+                    <div class="order-summary">
+                        <center>
+                            <img src="../img/libros/<%= queryDetalle[0].Imagen %>" alt="<%= queryDetalle[0].Imagen %>" style="max-width: 50%;">
+                        </center>
+                        <br>
+                        <!-- Titulo -->
+                        <div class="order-col">
+                            <div><strong>Titulo</strong></div>
+                            <div><strong><!-- TOTAL --></strong></div>
+                        </div>
+                        <div class="order-products">
+                            <div class="order-col">
+                                <div><%= queryDetalle[0].Titulo %></div>
+                                <div><!-- $980.00 --></div>
+                            </div>
+                        </div>
+                        <!-- Descripcion -->
+                        <div class="order-col">
+                            <div><strong>Descripci&oacute;n</strong></div>
+                            <div><strong><!-- TOTAL --></strong></div>
+                        </div>
+                        <div class="order-products">
+                            <div class="order-col">
+                                <div><%= queryDetalle[0].Descripcion %></div>
+                                <div><!-- $980.00 --></div>
+                            </div>
+                        </div>
+                        <!-- Precio -->
+                        <div class="order-col">
+                            <div><strong>Precio</strong></div>
+                            <div><strong><!-- TOTAL --></strong></div>
+                        </div>
+                        <div class="order-products">
+                            <div class="order-col">
+                                <div>$ <%= queryDetalle[0].Precio %></div>
+                                <div><!-- $980.00 --></div>
+                            </div>
+                        </div>
+                        <!-- Tecnologia -->
+                        <div class="order-col">
+                            <div><strong>Tecnolog&iacute;a</strong></div>
+                            <div><strong><!-- TOTAL --></strong></div>
+                        </div>
+                        <div class="order-products">
+                            <div class="order-col">
+                                <div><%= queryDetalle[0].Tecnologia %></div>
+                                <div><!-- $980.00 --></div>
+                            </div>
+                        </div>
+                        <!-- Autor -->
+                        <div class="order-col">
+                            <div><strong>Autor</strong></div>
+                            <div><strong><!-- TOTAL --></strong></div>
+                        </div>
+                        <div class="order-products">
+                            <div class="order-col">
+                                <div><%= queryDetalle[0].Autor %></div>
+                                <div><!-- $980.00 --></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Detalles del Curso -->
+
+                <!-- Comentarios -->
+                <div class="col-md-6 order-details" style="max-height: 50em;">
+                    <div class="section-title text-center">
+                        <h3 class="title">Comentarios</h3>
+                    </div>
+                    <div class="order-summary">
+                        <% for(var i=0; i<queryComentarios.length; i++) { %>
+                        <div class="panel panel-default">
+                            <div class="panel-heading"><%= queryComentarios[i].Usuario %></div>
+                            <div class="panel-body"><%= queryComentarios[i].Comentario %></div>
+                        </div>
+                        <% } %>
+                    </div>
+                    <hr>
+                    <form action="/cursos/<%= queryDetalle[0].IDProducto %>" method="POST">
+                        <textarea id="txtComentario" name="txtComentario" class="input" placeholder="Escribir un comentario..." style="resize: none;" required></textarea>
+                        <!-- <a href="#" class="primary-btn order-submit">Enviar comentario</a> -->
+                        <input type="submit" class="primary-btn order-submit" value="Enviar comentario">
+                    </form>
+                </div>
+                <!-- <textarea class="input" placeholder="Order Notes"></textarea> -->
+                <!-- /Comentarios -->
+
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
+    </div>
+
+</body>
+        		
+<%- include layouts/footer.ejs %>

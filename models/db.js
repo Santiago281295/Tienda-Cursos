@@ -52,7 +52,6 @@ var mysql = require('mysql');
             return( useDefaultTypeCasting() );
         }
     });
-
     /*var connection = mysql.createConnection({
         host: 'den1.mysql6.gear.host',
         port: 3306,
@@ -77,7 +76,7 @@ var mysql = require('mysql');
 
             return( useDefaultTypeCasting() );
         }
-    });
+    });*/
 // } else {
 //     console.log("No hay Conexión");
 // }*/
