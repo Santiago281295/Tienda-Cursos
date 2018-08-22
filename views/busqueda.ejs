@@ -10,7 +10,7 @@
             <!-- row -->
             <div class="row">
                 <div class="col-md-12">
-                    <h3 class="breadcrumb-header">Todos nuestros Cursos</h3>
+                    <h3 class="breadcrumb-header">Resultados de la Busqueda</h3>
                 </div>
             </div>
             <!-- /row -->
@@ -24,7 +24,7 @@
 			<!-- product -->
 			<div class="product">
 				<div class="product-img">
-					<img src="./img/libros/<%= queryCursos[i].Imagen %>" alt="">
+					<img src="../../img/libros/<%= queryCursos[i].Imagen %>" alt="">
 					<div class="product-label">
 						<!-- <span class="sale">-30%</span> -->
 						<!-- <span class="new">Nuevo</span> -->
@@ -46,8 +46,9 @@
 						<div class="product-btns">
 							<!-- <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button> -->
 							<button formaction="/pay" class="add-to-compare"><i class="fa fa-paypal"></i><span class="tooltipp">Comprar</span></button>
-							<!-- <button class="quick-view"><i class="fa fa-eye" onclick="window.location='/cursos/<%= queryCursos[i].IDProducto %>'"></i><span class="tooltipp">Detalles</span></button> -->
+							
 						</div>
+
 					</form>
 					<div class="product-btns">
 							<button class="quick-view"><i class="fa fa-eye" onclick="window.location='/cursos/<%= queryCursos[i].IDProducto %>'"></i><span class="tooltipp">Detalles</span></button>

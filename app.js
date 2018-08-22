@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+// var paypal = require('paypal-rest-sdk');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -42,5 +43,12 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+// // PayPal Configuration
+// paypal.configure({
+//   'mode': 'sandbox', //sandbox or live
+//   'client_id': 'AaSrItp0ysNRZ6VlT1qmvSJIcNEbknkGwD-KId5Xsi2Xbp4fbvrkFlteWSDY9e7ZFYvSK4IkqPbqrrhn',
+//   'client_secret': 'EHFWePkM3b-a8Lh27kqj780aMn8uEFwHQH3joAArPkrQmgQs27Ni6tpc4SrG2Bag9XpoaWvRpYkOnwzg'
+// });
 
 module.exports = app;

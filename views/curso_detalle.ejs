@@ -61,12 +61,12 @@
                         <!-- Precio -->
                         <div class="order-col">
                             <div><strong>Precio</strong></div>
-                            <div><strong><!-- TOTAL --></strong></div>
+                            <div><strong>Existenias</strong></div>
                         </div>
                         <div class="order-products">
                             <div class="order-col">
                                 <div>$ <%= queryDetalle[0].Precio %></div>
-                                <div><!-- $980.00 --></div>
+                                <div><%= queryDetalle[0].Stock %></div>
                             </div>
                         </div>
                         <!-- Tecnologia -->
@@ -96,7 +96,8 @@
                 <!-- /Detalles del Curso -->
 
                 <!-- Comentarios -->
-                <div class="col-md-6 order-details" style="max-height: 50em;">
+                 <!-- style="max-height: 50em;" -->
+                <div class="col-md-6 order-details">
                     <div class="section-title text-center">
                         <h3 class="title">Comentarios</h3>
                     </div>
@@ -111,7 +112,6 @@
                     <hr>
                     <form action="/cursos/<%= queryDetalle[0].IDProducto %>" method="POST">
                         <textarea id="txtComentario" name="txtComentario" class="input" placeholder="Escribir un comentario..." style="resize: none;" required></textarea>
-                        <!-- <a href="#" class="primary-btn order-submit">Enviar comentario</a> -->
                         <input type="submit" class="primary-btn order-submit" value="Enviar comentario">
                     </form>
                 </div>
@@ -124,6 +124,6 @@
         <!-- /container -->
     </div>
 
-</body>
+<!-- </body> -->
         		
 <%- include layouts/footer.ejs %>

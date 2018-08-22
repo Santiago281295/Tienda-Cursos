@@ -1,0 +1,43 @@
+<%- include layouts/headerBack.ejs %>
+
+<div class="card">
+    <div class="card-header">
+      <h4>Filtro de Bit&aacute;cora</h4>
+      <br>
+      <!-- <input type="submit" value="Submit" class="mr-3 btn btn-primary"> -->
+      <!-- <a href="/Back/curso_nuevo" class="mr-3 btn btn-primary">
+      	<i class="fa fa-plus-circle fa-lg"></i> Agregar nuevo curso
+      </a> -->
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-striped table-hover table-sm table-bordered">
+          <thead>
+            <tr>
+              <th>Clave de Bit&aacute;cora</th>
+              <th>Clave del Producto</th>
+              <th>T&iacute;tulo</th>
+              <th>Precio</th>
+              <th>Fecha</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for(var i=0; i<queryBitacora.length; i++) { %>
+
+            <tr>
+              <th><%= queryBitacora[i].IDBitacora %></th>
+              <th><%= queryBitacora[i].IDProducto %></th>
+              <th><%= queryBitacora[i].Titulo%></th>
+              <th><%= queryBitacora[i].Precio %></th>
+              <th><%= queryBitacora[i].Fecha %></th>
+            </tr>
+
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+</div>
+
+<%- include layouts/footerBack.ejs %>

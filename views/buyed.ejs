@@ -1,0 +1,83 @@
+<%- include layouts/header.ejs %>
+ 
+<body>
+    <div id="breadcrumb" class="section">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="breadcrumb-header">Compra exitosa</h3>
+                </div>
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- SECTION -->
+    <div class="section">
+        <!-- container -->
+        <div class="container">
+            <!-- <div class="row">
+                <div class="section-title">
+                    <h3 class="title">Acerca de&hellip;</h3>
+                </div>
+            </div> -->
+            <!-- row -->
+            <div class="row">
+
+                <!-- Mision -->
+                <div class="col-md-3"></div>
+                <!-- /Mision -->
+
+                <!-- Vision -->
+                <div class="col-md-6 order-details">
+                    <div class="section-title text-center">
+                        <div class="alert alert-danger alert-dismissible">
+                          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                          <strong>Aviso!</strong> No actualices ni cierres la p&aacute;gina hasta descargar tus archivos.
+                        </div>
+                        <h3 class="title">Gracias por tu compra :)</h3>
+                    </div>
+                    <div class="order-summary">
+                        <center>
+                            <img src="../img/buyed.png" alt="" style="max-width: 50%;">
+                        </center>
+                        <br>
+                        <!-- Detalles de Compra -->
+                        <div class="order-col">
+                            <div><strong>Clave de Compra</strong></div>
+                            <div><strong>Clave del Comprador</strong></div>
+                        </div>
+                        <div class="order-products">
+                            <div class="order-col">
+                                <div><%= paymentId %></div>
+                                <div><%= payerId %></div>
+                            </div>
+                        </div>
+                        <!-- Titulo -->
+                        <div class="order-col">
+                            <div><strong>Descarga tus archivos&hellip;</strong></div>
+                            <div><strong><!-- TOTAL --></strong></div>
+                        </div>
+                        <div class="order-products">
+                            <div class="order-col">
+                                <div><a href="../bookFiles/<%= book %>" target="_blank"><%= book %></a></div>
+                                <div><!-- $980.00 --></div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <!-- /Vision -->
+
+                <div class="col-md-3"></div>
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
+    </div>
+
+</body>
+        		
+<%- include layouts/footer.ejs %>
